@@ -4,6 +4,7 @@ The application is a simple pet clinic management system that allows users to ma
 
 ### Reference Documentation
 
+* [Spring Project - Spring pet clinic](https://github.com/spring-projects/spring-petclinic)
 * [Accessing Data with JPA](https://spring.io/guides/gs/accessing-data-jpa/)
 * [Validation](https://spring.io/guides/gs/validating-form-input/)
 * [Building a RESTful Web Service](https://spring.io/guides/gs/rest-service/)
