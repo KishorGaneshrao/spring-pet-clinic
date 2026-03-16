@@ -1,11 +1,11 @@
 package tech.ark.petclinicdata.map;
 
 import tech.ark.petclinicdata.model.Pet;
-import tech.ark.petclinicdata.services.CrudService;
+import tech.ark.petclinicdata.services.PetService;
 
 import java.util.Set;
 
-public class PetServiceMap extends AbstractMapService<Pet, Long> implements CrudService<Pet, Long> {
+public class PetServiceMap extends AbstractMapService<Pet, Long> implements PetService {
 
     @Override
     public Pet save(Pet Pet) {

@@ -1,15 +1,15 @@
 package tech.ark.petclinicdata.map;
 
 import tech.ark.petclinicdata.model.Owner;
-import tech.ark.petclinicdata.services.CrudService;
+import tech.ark.petclinicdata.services.OwnerService;
 
 import java.util.Set;
 
-public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements CrudService<Owner, Long> {
+public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements OwnerService {
 
     @Override
     public Owner save(Owner owner) {
-        return super.save(Long.valueOf(owner.getId()), owner);
+        return super.save(owner.getId(), owner);
     }
 
     @Override
@@ -30,5 +30,10 @@ public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements 
     @Override
     public void deleteById(Long id) {
         super.deleteById(id);
+    }
+
+    @Override
+    public Owner findByLastName(String lastName) {
+        return null;
     }
 }
