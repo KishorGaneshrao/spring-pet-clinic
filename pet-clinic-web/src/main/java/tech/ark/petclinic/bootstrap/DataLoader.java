@@ -3,11 +3,14 @@ package tech.ark.petclinic.bootstrap;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 import tech.ark.petclinic.model.Owner;
+import tech.ark.petclinic.model.Pet;
 import tech.ark.petclinic.model.PetType;
 import tech.ark.petclinic.model.Vet;
 import tech.ark.petclinic.services.OwnerService;
 import tech.ark.petclinic.services.PetTypeService;
 import tech.ark.petclinic.services.VetService;
+
+import java.time.LocalDate;
 
 @Component
 public class DataLoader implements CommandLineRunner {
@@ -38,11 +41,31 @@ public class DataLoader implements CommandLineRunner {
         Owner owner1 = new Owner();
         owner1.setFirstName("Michael");
         owner1.setLastName("Weston");
+        owner1.setAddress("221B Baker Street");
+        owner1.setCity("London");
+        owner1.setTelephone("5454867544");
+
+        Pet mikesPet = new Pet();
+        mikesPet.setType(dog);
+        mikesPet.setOwner(owner1);
+        mikesPet.setBirthDate(LocalDate.now());
+        mikesPet.setName("Rosco");
+        owner1.getPets().add(mikesPet);
         ownerService.save(owner1);
 
         Owner owner2 = new Owner();
         owner2.setFirstName("Fiona");
         owner2.setLastName("Glenanne");
+        owner2.setAddress("221B Baker Street");
+        owner2.setCity("London");
+        owner2.setTelephone("5454867544");
+
+        Pet fionasPet = new Pet();
+        fionasPet.setType(cat);
+        fionasPet.setOwner(owner2);
+        fionasPet.setBirthDate(LocalDate.now());
+        fionasPet.setName("Billy");
+        owner2.getPets().add(fionasPet);
         ownerService.save(owner2);
 
         System.out.println("Loading owners...");
